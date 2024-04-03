@@ -5,8 +5,10 @@ import Main from "./screens/main/Main";
 
 export default function Page() {
   return (
-    <Provider store={store}>
-      <Main />
-    </Provider>
+    <>
+      <Provider store={store}>
+        <Main />
+      </Provider>
+    </>
   );
 }

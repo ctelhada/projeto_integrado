@@ -5,12 +5,11 @@ import { setInput } from "../../redux/breakify-slice";
 import { BreakifyButton, FormWrapper } from "./form.styles";
 
 export const Form = () => {
-  const [firstName, setFirstName] = useState("Breaking");
-  const [lastName, setLastName] = useState("Bad");
+  const [firstName, setFirstName] = useState("Don't keep them waitintg!");
 
   const dispatch = useDispatch();
   const handleSubmit = () => {
-    dispatch(setInput({ firstName, lastName }));
+    dispatch(setInput({ firstName }));
   };
 
   return (
@@ -26,7 +25,7 @@ export const Form = () => {
         style={{
           display: "flex",
           flexDirection: "row",
-          padding: "2rem",
+          padding: "1rem",
           justifyContent: "space-between",
         }}
       >
@@ -35,9 +34,12 @@ export const Form = () => {
             display: "flex",
             flexDirection: "column",
             margin: "1rem",
+            justifyContent: "space-between",
           }}
         >
-          <label htmlFor="firstName">First Name</label>
+          <label htmlFor="firstName" style={{ margin: "1rem" }}>
+            Type your target profile here!
+          </label>
           <input
             style={{
               width: "100%",
@@ -52,33 +54,9 @@ export const Form = () => {
             value={firstName}
           />
         </div>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            margin: "1rem",
-          }}
-        >
-          <label htmlFor="lastName">Last Name</label>
-          <input
-            name="lastName"
-            type="text"
-            onChange={function (e) {
-              setLastName(e.target.value);
-            }}
-            style={{
-              width: "100%",
-              height: "2rem",
-              backgroundColor: "white",
-              borderRadius: 6,
-              color: "black",
-            }}
-            value={lastName}
-          />
-        </div>
       </div>
       <BreakifyButton type="submit" onClick={handleSubmit}>
-        Breakify
+        Hit it off!
       </BreakifyButton>
     </FormWrapper>
   );

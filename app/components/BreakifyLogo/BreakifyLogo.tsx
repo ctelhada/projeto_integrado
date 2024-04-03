@@ -7,9 +7,8 @@ interface Props {
 export const BreakifyLogo = ({ result }: Props) => {
   return (
     <BreakifyWrapper>
-      <span>{result[0]}</span>
-      {result[1] && <BreakifyChildren>{result[1]}</BreakifyChildren>}
-      <span>{result[2]}</span>
+      <BreakifyChildren>W</BreakifyChildren>
+      <span>ingman</span>
     </BreakifyWrapper>
   );
 };

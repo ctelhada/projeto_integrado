@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 import breakify from "../../utils/breakify";
 
 export default function Main() {
-  const { firstName, secondName } = useAppSelector((state) => state.counter);
+  const { firstName } = useAppSelector((state) => state.counter);
 
   const [first, setFirst] = useState(["", "", ""]);
   const [last, setLast] = useState(["", "", ""]);
@@ -18,16 +18,11 @@ export default function Main() {
     setFirst(breakify(firstName));
   }, [firstName]);
 
-  useEffect(() => {
-    setLast(breakify(secondName));
-  }, [secondName]);
-
   return (
     <Provider store={store}>
-      <main className={styles.main} style={{ backgroundColor: "#202020" }}>
+      <main className={styles.main}>
         <div>
           <BreakifyLogo result={first} />
-          <BreakifyLogo result={last} />
           <Form />
         </div>
       </main>
