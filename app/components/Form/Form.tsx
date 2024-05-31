@@ -6,10 +6,21 @@ import { BreakifyButton, FormWrapper } from "./form.styles";
 
 export const Form = () => {
   const [firstName, setFirstName] = useState("Don't keep them waitintg!");
+  function returnStringAfter6Seconds() {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve("Hello, this is your string after 6 seconds!");
+      }, 6000);
+    });
+  }
 
   const dispatch = useDispatch();
-  const handleSubmit = () => {
-    dispatch(setInput({ firstName }));
+
+  const handleSubmit = async () => {
+    returnStringAfter6Seconds().then((result) => {
+      console.log(result);
+      dispatch(setInput({ firstName }));
+    });
   };
 
   return (

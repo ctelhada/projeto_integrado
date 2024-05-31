@@ -4,7 +4,7 @@ interface Props {
   result: string[];
 }
 
-export const BreakifyLogo = ({ result }: Props) => {
+export const BreakifyLogo = () => {
   return (
     <BreakifyWrapper>
       <BreakifyChildren>W</BreakifyChildren>

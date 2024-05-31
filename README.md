@@ -26,3 +26,5 @@ Made with:
 
 Developed by:
 carlos.l.telhada@gmail.com
+
+DONT FORGET TO SETUP YOUR .ENV FILE

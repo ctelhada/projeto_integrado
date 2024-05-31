@@ -7,23 +7,65 @@ import { Form } from "../../components";
 import { useAppSelector } from "@/app/redux/hooks";
 import { useEffect, useState } from "react";
 import breakify from "../../utils/breakify";
+import { count } from "console";
 
 export default function Main() {
-  const { firstName } = useAppSelector((state) => state.counter);
+  const { firstName, counter, myEnum } = useAppSelector(
+    (state) => state.counter
+  );
 
-  const [first, setFirst] = useState(["", "", ""]);
-  const [last, setLast] = useState(["", "", ""]);
+  let [check, setCheck] = useState(0);
+
+  // const myBox = () => {
+  //   return (
+  //     <>
+  //       {myEnum.map((str) => {
+  //         <p
+  //           style={{
+  //             display: "flex",
+  //             flexDirection: "column",
+  //             alignItems: "center",
+  //             marginTop: "40px",
+  //             color: "black",
+  //             backgroundColor: "whitesmoke",
+  //           }}
+  //         >
+  //           {str}
+  //         </p>;
+  //       })}
+  //     </>
+  //   );
+  // };
 
   useEffect(() => {
-    setFirst(breakify(firstName));
-  }, [firstName]);
+    setCheck(check++);
+  }, [counter]);
+
+  console.log({ counter });
 
   return (
     <Provider store={store}>
       <main className={styles.main}>
         <div>
-          <BreakifyLogo result={first} />
+          <BreakifyLogo />
           <Form />
+          <>
+            {myEnum?.map((str, index) => (
+              <p
+                key={index}
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  marginTop: "40px",
+                  color: "black",
+                  backgroundColor: "whitesmoke",
+                }}
+              >
+                {str}
+              </p>
+            ))}
+          </>
         </div>
       </main>
     </Provider>

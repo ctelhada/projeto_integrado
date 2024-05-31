@@ -7,7 +7,7 @@ export const FormWrapper = styled.div`
 `;
 
 export const BreakifyButton = styled.button`
-  background-color: #ff33ec;
+  background-color: #838181;
   height: 3rem;
   width: 100%;
   border-radius: 6px;

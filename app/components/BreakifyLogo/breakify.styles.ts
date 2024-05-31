@@ -18,7 +18,7 @@ export const BreakifyChildren = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background: linear-gradient(-45deg, #838181, #1f1d1d, #dce3e6, #8e9997);
   background-size: 400% 400%;
   animation: gradient 4s ease infinite;
 }
